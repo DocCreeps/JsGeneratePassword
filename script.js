@@ -1,9 +1,10 @@
 // @ts-check
 
 /**
- * getting the input by the <input> tag
+ * getting the input by the id mypass tag
  */
-const input = document.querySelector("input");
+const Mypass = document.querySelector("input");
+
 /**
  * getting the button by the <button> tag
  */
@@ -79,5 +80,6 @@ function GeneratePassword(length) {
  * and set it as value of the input
  */
 button.addEventListener("click", () => {
-    input.value = GeneratePassword(length);
+    Mypass.value = GeneratePassword(length);
+
 });
