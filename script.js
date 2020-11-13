@@ -3,7 +3,11 @@
 /**
  * getting the input by the id mypass tag
  */
-const Mypass = document.querySelector("input");
+const Mypass = document.querySelector("#mypass");
+/**
+ * getting the input by the id lengthpass tag
+ */
+const Lengthpass = document.querySelector("#lengthpass");
 
 /**
  * getting the button by the <button> tag
@@ -33,7 +37,7 @@ function GeneratePassword(length) {
      * @type {String}
      */
     length = getRndInteger(8, 32);
-    console.log(length);
+    //console.log(length);
     const charset =
         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$*-/+.,;$€éèçà'(){}=ù§_&°µ%!:?";
 
@@ -67,6 +71,11 @@ function GeneratePassword(length) {
          * and append it to the password variable
          */
         password += charset.charAt(at);
+        /**
+         * return value of length to password in input lengthpass
+         * @type {string}
+         */
+        Lengthpass.value = length.toString();
     }
 
     /**
