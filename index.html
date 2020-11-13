@@ -5,23 +5,32 @@
     <meta charset="UTF-8">
     <title>Generate Password</title>
     <link rel="stylesheet" href="index.css">
-
 </head>
 <header>
-    <h1>Générateur de mot de passe</h1><br>
+
+
 </header>
 
 <body>
-
+<section id="generatePassword">
+    <h1>Générateur de mot de passe</h1><br>
     <label>
         <input type="text" id="mypass" name="mypass" placeholder=" " disabled>
     <p>mot de passe</p>
-    </label><br>
+    </label><br><br>
     <label>
         <input type="text" id="lengthpass" name="lengthpass" placeholder=" " disabled>
     <p>Longeur du mot de passe</p>
-    </label>
+    </label><br>
     <button>🔑Générer un mot de passe</button>
+</section>
+
+<section id="chooseYourPassword" hidden>
+    <h1>Choisissez les options de votre mot de passe</h1><br>
+</section>
+<section id="listePassword" hidden>
+    <h1>Listes des mot de passe générer sur la session</h1><br>
+</section>
 
 </body>
 <footer>

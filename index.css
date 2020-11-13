@@ -33,7 +33,9 @@ body {
 
 h1 {
     color: #F9F9F9;
+    text-align: center;
 }
+
 
 label {
     position: relative;
