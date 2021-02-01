@@ -1,21 +1,19 @@
-// @ts-check
-
 /**
- * getting the input by the id mypass tag
+ * Récupère l'input avec l'id Mypass
  */
 const Mypass = document.querySelector("#mypass");
 /**
- * getting the input by the id lengthpass tag
+ * Récupère l'input avec l'id Lengthpass
  */
 const Lengthpass = document.querySelector("#lengthpass");
 
 /**
- * getting the button by the <button> tag
+ * Récupère le boutton avec l'id button
  */
 const button = document.querySelector("button");
 
 /**
- * Generate a Random number for number Character of password
+ * Génére un nombre random de caratère pour le mot de passe
  * @param {*} min 
  * @param {*} max 
  */
@@ -25,22 +23,25 @@ function getRndInteger(min, max) {
 }
 
 /**
- * Generate a Random String as Password
- * @param {Number} [length] length of the generated password
- * @return {String} generated string with random charachters (password)
+ * Génére un MDP random
+ * @param {Number} [length] taille du MDP
+ * @return {String} Génére un MDP (password)
  */
 
 
 function GeneratePassword(length) {
     /**
-     * These characters are used to generate the password
+     * Listes des caractères utilisée pour le MDP
      * @type {String}
      */
-    length = getRndInteger(8, 32);
+    length = getRndInteger(8, 90);
     //console.log(length);
-    const charset =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$*-/+.,;$€éèçà'(){}=ù§_&°µ%!:?";
 
+    const maj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const min = "abcdefghijklmnopqrstuvwxyz";
+    const number = "0123456789";
+    const specialchar = "@#$*-/+.,;$€éèçà'(){}=ù§_&°µ%!:?[~%^&[]<>|]";
+    const charset = maj + min + number + specialchar;
     /**
      * Generated Characters as String
      * @type {String}
@@ -48,46 +49,22 @@ function GeneratePassword(length) {
     let password = "";
 
     /**
-     * Running the for loop x times
-     * x = length
-     *
-     * using ++ in front of i to increase the i value
-     * before the block gets executed
-     *
-     * so i is strting with 1 instead of 0 because otherwise
-     * the first character would be always a (0)
+     * boucle de génération du MDP
      */
     for (let i = 0; i < length; ++i) {
-        /**
-         * Generating a random number
-         * between 0 and the charset length to get
-         * a random character from the whole string
-         * @type {Number}
-         */
+
         let at = Math.floor(Math.random() * (charset.length + 1));
 
-        /**
-         * Getting a random char from the charset
-         * and append it to the password variable
-         */
+
         password += charset.charAt(at);
-        /**
-         * return value of length to password in input lengthpass
-         * @type {string}
-         */
+
         Lengthpass.value = length.toString();
     }
 
-    /**
-     * returning the password
-     */
+
     return password;
 }
 
-/**
- * Generate a random password on button click
- * and set it as value of the input
- */
 button.addEventListener("click", () => {
     Mypass.value = GeneratePassword(length);
 
