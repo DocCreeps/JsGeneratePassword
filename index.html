@@ -22,12 +22,18 @@
         <input type="text" id="lengthpass" name="lengthpass" placeholder=" " disabled>
     <p>Longeur du mot de passe</p>
     </label>
-    <button>🔑Générer un mot de passe</button>
+    <button id="randomPassword">🔑Générer un mot de passe</button>
 
 
-    <section id="chooseYourPassword" hidden>
+    <section id="chooseYourPassword">
         <h1>Choisissez les options de votre mot de passe</h1><br>
-
+        <label><input type="checkbox" name="myCheckbox" id="maj" checked> Majuscule</label>
+        <label><input type="checkbox" name="myCheckbox" id="min" checked> Minuscule</label>
+        <label><input type="checkbox" name="myCheckbox" id="num" checked> Chiffre</label>
+        <label><input type="checkbox" name="myCheckbox" id="specialchar" checked> Caractère spéciales</label>
+        <label><input type="number" name="numberChar" id="numberChar" value="8" min="8" max="250" step="1">Nombre de Caractère du mot de passe</label>
+        <label><input type="number" name="numberPass" id="numberPass" value="1" min="1" max="20" step="1">Nombre de mot de passe a générer </label>
+        <button id="persoPassword">🔑Générer un mot de passe</button>
     </section>
     <section id="listePassword" hidden>
         <h1>Listes des mot de passe générer sur la session</h1><br>
